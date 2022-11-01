@@ -50,7 +50,9 @@
 #define NVMCTRL_CMD_WP         0xa504
 #define NVMCTRL_CMD_SDAL0      0xa54b
 
-#define DEVICE_ID_MASK         0xfffff0ff
+//#define DEVICE_ID_MASK         0xfffff0ff
+#define DEVICE_ID_MASK         0xffffffff
+
 #define DEVICE_REV_SHIFT       8
 #define DEVICE_REV_MASK        0xf
 
@@ -103,6 +105,7 @@ typedef struct
 /*- Variables ---------------------------------------------------------------*/
 static device_t devices[] =
 {
+  { 0x20840104, "saml10", "SAM L10D15A",  32*1024, false },
   { 0x20840003, "saml10", "SAM L10D16A",  64*1024, false },
   { 0x20840000, "saml10", "SAM L10E16A",  64*1024, false },
   { 0x20830003, "saml11", "SAM L11D16A",  64*1024, true  },
